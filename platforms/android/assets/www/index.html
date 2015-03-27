@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
+  <script src="js/lightGallery.js"></script>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <link rel="stylesheet"  href="css/lightGallery.css"/>
+     <script>
+    </script>
+<style>
+body,a ,table{font-family: heaventica, sans-serif; font-size:0.9em;}
+
+  	.gallery  ul{
+			list-style: none outside none;
+		    padding-left: 0;
+		}
+		.gallery li {
+			display: block;
+			float: left;
+			height: 100px;
+			margin-bottom: 2%;
+			margin-right: 2%;
+			width: 75px;
+		}
+		.gallery li a {
+			height: 100%;
+			width: 100%;
+		}
+		.gallery li a img {
+			max-width: 100%;
+            max-height: 100%;
+		}
+
+</style>
+
+
+<script type="text/javascript" charset="utf-8">
+
+// Wait for Cordova to connect with the device
+//
+
+//
+// Called when a photo is successfully retrieved
+//
+
+  document.addEventListener("exit", function(e){
+    if($.mobile.activePage.is('#city')){
+        /* 
+         Event preventDefault/stopPropagation not required as adding backbutton
+          listener itself override the default behaviour. Refer below PhoneGap link.
+        */
+        //e.preventDefault();
+        navigator.app.exitApp();
+    }
+    else {
+        navigator.app.backHistory()
+    }
+}, false);          
+
+    });
+</script>
+<script type="text/javascript" charset="utf-8">
+
+
+ 	 $(document).ready(function() {
+			$("#lightGallery").lightGallery();
+		});
+</script>
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+<!-- page 1 ----------------------------------------------------------------------------------------------------------------------------->
+<div data-role="page" id="pageone">
+  <div data-role="panel" id="overlayPanel" data-display="overlay"> 
+     <ul data-role="listview">
+   <li <a style= font-size:1em;>Vandana Shukla</a></li>
+   <li data-icon="user"><a href="#city" style= font-size:0.9em;>My Pic</a></li>
+  <li data-icon="recycle"><a href="#placeholder4" style= font-size:0.9em;>My Video</a></li>
+  <li data-icon="star"><a href="#placeholder1" style= font-size:0.9em;>Family details</a></li>
+ <li data-icon="phone"><a href="#placeholder3" style= font-size:0.9em;>About me</a></li>
+</ul>  
+  </div> 
+     <div data-role="main" class="ui-content"  >
+     <div class="div1" align="center"><a href = "#city">
+   <img src="images/img25.jpg"   style="width:100%;height:110%"> </img>
+   </a></div>
+  </div>
+    </div> 
+<!--- Second page (Family Details)-------------------------------------------------------------------------------------------------------------------------------------------------->
+<div data-role="page" id="placeholder1">
+  <div data-role="panel" id="overlayPanel1" data-display="overlay"> 
+    <ul data-role="listview">
+   <li data-icon="user"><a href="#city" style= font-size:0.9em;>My Pic</a></li>
+  <li data-icon="recycle"><a href="#placeholder4" style= font-size:0.9em;>My Video</a></li>
+  <li data-icon="star"><a href="#placeholder1" style= font-size:0.9em;>Family details</a></li>
+ <li data-icon="phone"><a href="#placeholder3" style= font-size:0.9em;>About me</a></li>
+
+ </ul>  
+</div> 
+
+    <div data-role="header" data-position="fixed">
+   <a role="button" data-role="button" href="#overlayPanel1" class="ui-btn-left ui-btn-corner-all ui-btn  ui-icon-bars ui-btn-icon-notext ui-shadow" title=" Home " data-form="ui-icon"> 
+          Menu</a>
+     <h1>Family Detail</h1>
+    <div data-role="navbar">
+      <ul>
+         <li><a href="#pageone">Home</a></li>
+        <li><a href="#placeholder1">My Family</a></li>
+        <li><a href="#" id="exit" data-rel="back">Back</a></li>
+      </ul>
+    </div>
+  </div>
+<div data-role="main" class="ui-content" id="placeholder">
+
+    <h3><font color="RED">Mummy Pappa Love you Vandu!!!</font></h3>
+    <ul data-role="listview" data-inset="true">
+      <li>
+        <a href="#city">
+        <img src="images/img6.jpg">
+        <h2>My Papa</h2>
+        <p>Amerendra Sudarshan Shukla</p>
+        </a>
+      </li>
+      <li>
+        <a href="#city">
+        <img src="images/img3.jpg">
+        <h2>My Mummy</h2>
+        <p>Geeta Amerendra Shukla</p>
+        </a>
+      </li>
+       <li>
+        <a href="#city">
+        <img src="images/img4.jpg">
+        <h2>My Bro</h2>
+        <p>Rohan Amerendra Shukla</p>
+        </a>
+      </li>
+  
+    </ul>
+  </div>
+</div> 
+ 
+
+<!--------------thirdpage(Gallary)-------------------------------------------------------------------------------------->
+<div data-role="page" id="city">
+  <div data-role="panel" id="overlayPanel2" data-display="overlay"> 
+    <ul data-role="listview">
+   <li data-icon="user"><a href="#city" style= font-size:0.9em;>My Pic</a></li>
+  <li data-icon="recycle"><a href="#placeholder4" style= font-size:0.9em;>My Video</a></li>
+  <li data-icon="star"><a href="#placeholder1" style= font-size:0.9em;>Family details</a></li>
+  <li data-icon="phone"><a href="#placeholder3" style= font-size:0.9em;>About me</a></li>
+
+ </ul>  
+</div> 
+
+  <div data-role="header" data-position="fixed" data-disable-page-zoom="true">
+   <a role="button" data-role="button" href="#overlayPanel2" class="ui-btn-left ui-btn-corner-all ui-btn  ui-icon-bars ui-btn-icon-notext ui-shadow" title=" Home " data-form="ui-icon"> 
+          Menu</a>
+     <h1>My Pic</h1>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#pageone">Home</a></li>
+        <li><a href="#placeholder1">My Family</a></li>
+        <li><a href="#" id="exit" data-rel="back">Back</a></li>
+      </ul>
+    </div>
+  </div>
+	<div data-role="main"  class="ui-content" >
+    <ul id="lightGallery" class="gallery">
+        <li data-src="images/img1.jpg"> 
+        	<a href="#">
+            <img src="images/img1.jpg" />
+            </a> 
+        </li>
+        <li data-src="images/img2.jpg" > 
+        	<a href="#">
+            <img src="images/img2.jpg" />
+            </a> 
+        </li>
+        <li data-src="images/img3.jpg"> 
+        	<a href="#">
+            <img src="images/img3.jpg" />
+            </a> 
+        </li>
+        <li data-src="images/img4.jpg" > 
+        	<a href="#">
+            <img src="images/img4.jpg" />
+            </a> 
+        </li>
+                <li data-src="images/img5.jpg" > 
+        	<a href="#">
+            <img src="images/img5.jpg" />
+            </a> 
+        </li>
+                <li data-src="images/img6.jpg" > 
+        	<a href="#">
+            <img src="images/img6.jpg" />
+            </a> 
+        </li>
+                <li data-src="images/img7.jpg" > 
+        	<a href="#">
+            <img src="images/img7.jpg" />
+            </a> 
+        </li>
+         </li>
+                <li data-src="images/img8.jpg" > 
+        	<a href="#">
+            <img src="images/img8.jpg" />
+            </a> 
+        </li>
+         </li>
+                <li data-src="images/img9.jpg" > 
+        	<a href="#">
+            <img src="images/img9.jpg" />
+            </a> 
+        </li>
+        <li data-src="images/img10.jpg" > 
+        	<a href="#">
+            <img src="images/img10.jpg" />
+            </a> 
+        </li>
+        <li data-src="images/img11.jpg" > 
+        	<a href="#">
+            <img src="images/img11.jpg" />
+            </a> 
+        </li>
+         <li data-src="images/img12.jpg" > 
+        	<a href="#">
+            <img src="images/img12.jpg" />
+            </a> 
+        </li>
+        <li data-src="images/img13.jpg" > 
+        	<a href="#">
+            <img src="images/img13.jpg" />
+            </a> 
+        </li>
+                <li data-src="images/img14.jpg" > 
+        	<a href="#">
+            <img src="images/img14.jpg" />
+            </a> 
+        </li>
+                <li data-src="images/img15.jpg" > 
+        	<a href="#">
+            <img src="images/img15.jpg" />
+            </a> 
+        </li>
+                <li data-src="images/img16.jpg" > 
+        	<a href="#">
+            <img src="images/img16.jpg" />
+            </a> 
+        </li>
+        <li data-src="images/img17.jpg" > 
+        	<a href="#">
+            <img src="images/img17.jpg" />
+            </a> 
+        </li>
+                <li data-src="images/img18.jpg" > 
+        	<a href="#">
+            <img src="images/img18.jpg" />
+            </a> 
+        </li>
+                <li data-src="images/img19.jpg" > 
+        	<a href="#">
+            <img src="images/img19.jpg" />
+            </a> 
+        </li> 
+                        <li data-src="images/img20.jpg" > 
+        	<a href="#">
+            <img src="images/img20.jpg" />
+            </a> 
+        </li>
+                        <li data-src="images/img21.jpg" > 
+        	<a href="#">
+            <img src="images/img21.jpg" />
+            </a> 
+        </li>
+                        <li data-src="images/img22.jpg" > 
+        	<a href="#">
+            <img src="images/img22.jpg" />
+            </a> 
+        </li>
+                </li>
+                        <li data-src="images/img23.jpg" > 
+        	<a href="#">
+            <img src="images/img23.jpg" />
+            </a> 
+        </li>
+                </li>
+                        <li data-src="images/img24.jpg" > 
+        	<a href="#">
+            <img src="images/img24.jpg" />
+            </a> 
+        </li>
+        
+                </li>
+                        <li data-src="images/img25.jpg" > 
+        	<a href="#">
+            <img src="images/img25.jpg" />
+            </a> 
+        </li>
+                </li>
+                        <li data-src="images/img26.jpg" > 
+        	<a href="#">
+            <img src="images/img26.jpg" />
+            </a> 
+        </li>
+                </li>
+                        <li data-src="images/img27.jpg" > 
+        	<a href="#">
+            <img src="images/img27.jpg" />
+            </a> 
+        </li>
+    </ul>	
+    </div>
+    </div>
+<!--------------Contact US Page(About me)-------------------------------------------------------------------------------------->
+
+<div data-role="page" id="placeholder3">
+  <div data-role="panel" id="overlayPanel3" data-display="overlay"> 
+    <ul data-role="listview">
+    <li data-icon="user"><a href="#city" style= font-size:0.9em;>My Pic</a></li>
+  <li data-icon="recycle"><a href="#placeholder4" style= font-size:0.9em;>My Video</a></li>
+  <li data-icon="star"><a href="#placeholder1" style= font-size:0.9em;>Family details</a></li>
+  <li data-icon="phone"><a href="#placeholder3" style= font-size:0.9em;>About me</a></li>
+
+ </ul>   
+</div> 
+
+    <div data-role="header" data-position="fixed">
+   <a role="button" data-role="button" href="#overlayPanel3" class="ui-btn-left ui-btn-corner-all ui-btn  ui-icon-bars ui-btn-icon-notext ui-shadow" title=" Home " data-form="ui-icon"> 
+          Menu</a>
+     <h1>About me</h1>
+    <div data-role="navbar">
+      <ul>
+         <li><a href="#pageone">Home</a></li>
+        <li><a href="#placeholder1">My Family</a></li>
+        <li><a href="#" id="exit" data-rel="back">Back</a></li>
+      </ul>
+    </div>
+  </div>
+<div data-role="main" class="ui-content" id="contact">
+<h2>Personal Intro:</h2>
+<h4><table style="width:100%">
+  <tr>
+    <td>Name </td>
+    <td>: Vandana Amerendra Shukla</td>
+   </tr>
+  <tr>
+    <td>D.O.B</td>
+    <td>:  08- July- 1988</td>
+   </tr>
+  <tr>
+    <td>Birth Time</td>
+    <td>:  5.28 a.m.</td>
+    </tr>
+     <tr>
+    <td>Sun sign</td>
+    <td>:  Scorpio</td>
+    </tr>
+    <tr>
+    <td>Address</td>
+    <td>:  flat no. ,2nd floor, Navapur road,</td>
+    </tr>
+    <tr>
+    <td></td>
+    <td>   Boisar, Tal- Palghar, Dist. Palghar</td>
+    </tr>
+      <tr>
+    <td>Education</td>
+    <td>:  Msc(IT)</td>
+   </tr>
+         <tr>
+    <td>Work Profile</td>
+    <td>: IT Professor in Viva collage</td>
+   </tr>
+  </table></h4>
+</div>
+</div>
+<!--------------FeedBack Page(video)-------------------------------------------------------------------------------------->
+<div data-role="page" id="placeholder4">
+  <div data-role="panel" id="overlayPanel4" data-display="overlay"> 
+    <ul data-role="listview">
+    <li data-icon="user"><a href="#city" style= font-size:0.9em;>My Pic</a></li>
+  <li data-icon="recycle"><a href="#placeholder4" style= font-size:0.9em;>My Video</a></li>
+  <li data-icon="star"><a href="#placeholder1" style= font-size:0.9em;>Family details</a></li>
+  <li data-icon="phone"><a href="#placeholder3" style= font-size:0.9em;>About me</a></li>
+
+ </ul>   
+</div> 
+
+    <div data-role="header" data-position="fixed">
+   <a role="button" data-role="button" href="#overlayPanel4" class="ui-btn-left ui-btn-corner-all ui-btn  ui-icon-bars ui-btn-icon-notext ui-shadow" title=" Home " data-form="ui-icon"> 
+          Menu</a>
+     <h1>Video</h1>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#pageone">Home</a></li>
+        <li><a href="#placeholder1">My Family</a></li>
+        <li><a href="#" id="exit" data-rel="back">Back</a></li>
+      </ul>
+    </div>
+  </div>
+<div data-role="main" class="ui-content" id="contact">
+<h2>video</h2>
+<video width="100%" controls>
+  <source src="video/Shree Jyotish Ratna.avi" type="video/AVI">
+  Your browser does not support HTML5 video.
+</video>
+</div>
+</div>
+
+</body>
+</html>
